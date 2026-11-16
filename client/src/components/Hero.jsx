@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Truck, RotateCcw, CheckCircle2, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Hero({ product, onScrollToOrder, onSelectPackage }) {
   const [activeColorIndex, setActiveColorIndex] = useState(0);
@@ -56,7 +57,7 @@ export default function Hero({ product, onScrollToOrder, onSelectPackage }) {
 
               {/* Product Image */}
               <img
-                src={activeColor.image}
+                src={getAssetUrl(activeColor.image)}
                 alt={activeColor.name}
                 className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
               />
@@ -87,7 +88,7 @@ export default function Hero({ product, onScrollToOrder, onSelectPackage }) {
                   }`}
                   title={c.name}
                 >
-                  <img src={c.image} alt={c.name} className="w-full h-full object-contain" />
+                  <img src={getAssetUrl(c.image)} alt={c.name} className="w-full h-full object-contain" />
                   <div
                     className="absolute bottom-1 right-1 w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full border border-white shadow-2xs"
                     style={{ backgroundColor: c.code }}

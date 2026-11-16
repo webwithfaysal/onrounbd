@@ -302,16 +302,18 @@ export default function App() {
   };
 
   const handleBackToLanding = () => {
-    window.history.pushState({}, '', '/');
-    setCurrentPath('/');
+    const basePath = import.meta.env.BASE_URL || '/';
+    window.history.pushState({}, '', basePath);
+    setCurrentPath(basePath);
     fetchProduct();
   };
 
   const handleAdminLogout = () => {
     localStorage.removeItem('admin_token');
     setIsAdminLoggedIn(false);
-    window.history.pushState({}, '', '/');
-    setCurrentPath('/');
+    const basePath = import.meta.env.BASE_URL || '/';
+    window.history.pushState({}, '', basePath);
+    setCurrentPath(basePath);
   };
 
   // Dynamic secret admin URL routing (configurable via Admin Settings)
@@ -321,9 +323,16 @@ export default function App() {
 
   const cleanCurrentPath = currentPath.replace(/^\/+|\/+$/g, '').toLowerCase();
 
+  // Strip any base path (e.g. for GitHub Pages /onrounbd/)
+  const rawBase = (import.meta.env.BASE_URL || '/').replace(/^\/+|\/+$/g, '').toLowerCase();
+  let normalizedPath = cleanCurrentPath;
+  if (rawBase && rawBase !== '.' && normalizedPath.startsWith(rawBase)) {
+    normalizedPath = normalizedPath.slice(rawBase.length).replace(/^\/+|\/+$/g, '');
+  }
+
   // If a subpath was visited (e.g. /myadmin) on a fresh device and settings haven't arrived yet from Firestore,
   // show a quick loading state so the landing page doesn't flash before AdminLoginModal renders.
-  if (cleanCurrentPath !== '' && !settings && !localStorage.getItem('admin_path')) {
+  if (normalizedPath !== '' && !settings && !localStorage.getItem('admin_path')) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-2 border-rose-500 border-t-transparent" />
@@ -332,9 +341,9 @@ export default function App() {
   }
 
   // Check if current URL matches the configured secret admin path
-  const isAdminRoute = cleanCurrentPath === configuredAdminPath ||
-                       cleanCurrentPath.startsWith(configuredAdminPath + '/') ||
-                       (configuredAdminPath === 'admin2121' && cleanCurrentPath.startsWith('admin2121'));
+  const isAdminRoute = normalizedPath === configuredAdminPath ||
+                       normalizedPath.startsWith(configuredAdminPath + '/') ||
+                       (configuredAdminPath === 'admin2121' && normalizedPath.startsWith('admin2121'));
 
   if (isAdminRoute) {
     if (isAdminLoggedIn) {

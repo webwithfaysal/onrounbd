@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getAssetUrl } from '../utils/assetHelper';
 import {
   Layers,
   Plus,
@@ -930,10 +931,10 @@ export default function StockManagement({ product, onUpdateProduct }) {
                     <div className="flex items-center gap-2">
                       <div className="w-8 h-8 rounded-lg overflow-hidden bg-slate-100 border border-slate-200 shrink-0 flex items-center justify-center">
                         <img
-                          src={c.image}
+                          src={getAssetUrl(c.image)}
                           alt={c.name}
                           className="w-full h-full object-contain"
-                          onError={(e) => { e.target.src = '/images/underwear-navy.jpg'; }}
+                          onError={(e) => { e.target.src = getAssetUrl('/images/underwear-navy.jpg'); }}
                         />
                       </div>
                       <input

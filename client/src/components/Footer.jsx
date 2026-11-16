@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MapPin, ShieldCheck, Truck, Search } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Footer({ onOpenTrackOrder, settings }) {
   const hotline = settings?.hotline || "01711-223344";
@@ -15,7 +16,7 @@ export default function Footer({ onOpenTrackOrder, settings }) {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-3.5">
               <div className="bg-white px-2.5 py-1 rounded-xl flex items-center justify-center shadow-xs">
-                <img src="/images/logo.png" alt="ONROUN" className="h-6 w-auto object-contain" />
+                <img src={getAssetUrl('/images/logo.png')} alt="ONROUN" className="h-6 w-auto object-contain" />
               </div>
             </div>
             <p className="text-xs text-slate-400 max-w-md leading-relaxed mb-4">

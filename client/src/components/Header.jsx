@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, ShoppingBag, Search } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function Header({ onScrollToOrder, onOpenTrackOrder, product, settings }) {
   const hotline = settings?.hotline || "01711-223344";
@@ -9,9 +10,9 @@ export default function Header({ onScrollToOrder, onOpenTrackOrder, product, set
       <div className="max-w-6xl mx-auto px-3.5 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between">
         
         {/* Brand Logo with Transparent Background */}
-        <a href="/" className="flex items-center gap-2 group cursor-pointer" title="ONROUN">
+        <a href={import.meta.env.BASE_URL || '/'} className="flex items-center gap-2 group cursor-pointer" title="ONROUN">
           <img
-            src="/images/logo.png"
+            src={getAssetUrl('/images/logo.png')}
             alt="ONROUN"
             className="h-7 sm:h-8 md:h-9 w-auto object-contain transition-transform duration-200 group-hover:scale-102"
           />

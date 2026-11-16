@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Eye, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function ProductGallery({ product, onSelectProductColor, onScrollToOrder }) {
   const [selectedModalImage, setSelectedModalImage] = useState(null);
@@ -92,7 +93,7 @@ export default function ProductGallery({ product, onSelectProductColor, onScroll
                 {/* Image Container */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#F8F9FA] p-3 mb-2.5 flex items-center justify-center border border-slate-100">
                   <img
-                    src={item.image}
+                    src={getAssetUrl(item.image)}
                     alt={item.name}
                     className="w-full h-full object-contain"
                   />
@@ -202,7 +203,7 @@ export default function ProductGallery({ product, onSelectProductColor, onScroll
               {/* Image Container */}
               <div className="relative aspect-square rounded-2xl overflow-hidden bg-[#F8F9FA] p-4 mb-4 flex items-center justify-center border border-slate-100">
                 <img
-                  src={item.image}
+                  src={getAssetUrl(item.image)}
                   alt={item.name}
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
@@ -303,7 +304,7 @@ export default function ProductGallery({ product, onSelectProductColor, onScroll
             </div>
             <div className="aspect-square bg-[#F8F9FA] rounded-2xl flex items-center justify-center overflow-hidden p-3 sm:p-4">
               <img
-                src={selectedModalImage.image}
+                src={getAssetUrl(selectedModalImage.image)}
                 alt={selectedModalImage.name}
                 className="w-full h-full object-contain"
               />

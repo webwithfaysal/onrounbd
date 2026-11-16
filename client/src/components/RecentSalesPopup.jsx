@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, X, CheckCircle } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetHelper';
 
 export default function RecentSalesPopup() {
   const [visible, setVisible] = useState(false);
@@ -46,7 +47,7 @@ export default function RecentSalesPopup() {
       
       {/* Thumbnail */}
       <div className="w-12 h-12 rounded-xl bg-slate-50 p-1 border border-slate-100 shrink-0 relative">
-        <img src={current.image} alt={current.item} className="w-full h-full object-contain" />
+        <img src={getAssetUrl(current.image)} alt={current.item} className="w-full h-full object-contain" />
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-white" />
       </div>
 
