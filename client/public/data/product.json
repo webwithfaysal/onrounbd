@@ -1,0 +1,96 @@
+{
+  "success": true,
+  "product": {
+    "name": "প্রিমিয়াম আল্ট্রা-সফট ব্রিদেবল সিমলেস বক্সার ব্রিফ",
+    "subTitle": "১০০% মাইক্রোমোডাল পিওর কম্বড কটন | অ্যান্টি-ব্যাকটেরিয়াল ও নো-সুইট টেকনোলজি",
+    "singlePrice": 650,
+    "regularSinglePrice": 850,
+    "twoPcsPrice": 1200,
+    "regularTwoPcsPrice": 1300,
+    "threePcsPrice": 1500,
+    "regularThreePcsPrice": 1950,
+    "comboPrice": 2000,
+    "regularComboPrice": 2600,
+    "comboQuantity": 4,
+    "deliveryInsideDhaka": 70,
+    "deliveryOutsideDhaka": 130,
+    "comboFreeDelivery": true,
+    "colors": [
+      {
+        "id": "navy",
+        "name": "ক্লাসিক নেভি ব্লু (Navy Blue)",
+        "image": "/images/underwear-navy.jpg",
+        "code": "#2B3A4A"
+      },
+      {
+        "id": "mint",
+        "name": "সতেজ মিন্ট গ্রিন (Mint Green)",
+        "image": "/images/underwear-mint.jpg",
+        "code": "#8FB7A5"
+      },
+      {
+        "id": "grey",
+        "name": "চারকোল গ্রে (Charcoal Grey)",
+        "image": "/images/underwear-grey.jpg",
+        "code": "#68727A"
+      },
+      {
+        "id": "lightgrey",
+        "name": "লাইট অ্যাশ গ্রে (Light Ash Grey)",
+        "image": "/images/underwear-lightgrey.jpg",
+        "code": "#9E9C99"
+      }
+    ],
+    "sizes": [
+      {
+        "id": "M",
+        "label": "M (কোমর: 29-31 ইঞ্চি)",
+        "waist": "29-31",
+        "stock": 60,
+        "colorStock": {
+          "navy": 15,
+          "mint": 15,
+          "grey": 15,
+          "lightgrey": 15
+        }
+      },
+      {
+        "id": "L",
+        "label": "L (কোমর: 32-34 ইঞ্চি)",
+        "waist": "32-34",
+        "stock": 80,
+        "colorStock": {
+          "navy": 20,
+          "mint": 20,
+          "grey": 20,
+          "lightgrey": 20
+        }
+      },
+      {
+        "id": "XL",
+        "label": "XL (কোমর: 35-37 ইঞ্চি)",
+        "waist": "35-37",
+        "stock": 40,
+        "colorStock": {
+          "navy": 10,
+          "mint": 10,
+          "grey": 10,
+          "lightgrey": 10
+        }
+      },
+      {
+        "id": "XXL",
+        "label": "XXL (কোমর: 38-40 ইঞ্চি)",
+        "waist": "38-40",
+        "stock": 20,
+        "colorStock": {
+          "navy": 5,
+          "mint": 5,
+          "grey": 5,
+          "lightgrey": 5
+        }
+      }
+    ]
+  }
+}
+

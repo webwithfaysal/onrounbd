@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Hind Siliguri', 'Anek Bangla', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-bengali: 'Hind Siliguri', 'Anek Bangla', sans-serif;
+}
+
+/* Ensure Bengali text has optimal rendering, spacing and legibility across all browsers */
+html, body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  font-family: 'Hind Siliguri', 'Anek Bangla', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Hind Siliguri', 'Anek Bangla', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Hind Siliguri', 'Anek Bangla', sans-serif;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+input, button, select, textarea {
+  font-family: 'Hind Siliguri', 'Anek Bangla', system-ui, sans-serif;
+}
+
+/* Custom smooth animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(225, 29, 72, 0.7);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3s infinite ease-in-out;
+}
+
+/* Hide scrollbar for clean carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

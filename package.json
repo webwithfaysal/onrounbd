@@ -1,0 +1,17 @@
+{
+  "name": "onrounbd",
+  "version": "1.0.0",
+  "description": "Premium Men's Underwear Landing Page & Admin Panel in Bengali",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "serve": "cd client && npm run build && node server/server.js",
+    "push": "git add . && git commit -m \"Auto update\" && git push origin main"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
